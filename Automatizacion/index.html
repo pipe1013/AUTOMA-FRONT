@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatizador ExcelCredit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/image.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+</head>
+<body>
+    <header>
+        <img src="img/logoKoa.png" alt="Logo 1" class="logo1">
+        <img src="img/logoExcel.png" alt="Logo 2" class="logo2">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" id="digiCreditoLink">DIGICREDITO</a></li>
+            <li><a href="#">CDT</a></li>
+            <li><a href="#">JBOSS</a></li>
+        </ul>
+    </nav>
+
+    <div id="animationContainer" class="animation-container">
+        <img src="img/logoExcel.png" alt="Logo Animation" class="logo-animation">
+    </div>
+
+    <main id="mainContent" style="display: none;">
+        <div id="loginContainer">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="centrado">Iniciar sesión</button>
+            </form>
+        </div>
+        <div id="contentContainer" style="display: none;">
+            <form id="digiCreditoForm">
+                <div class="form-group">
+                    <label for="instancia">Instancia</label>
+                    <select id="instancia" name="instancia" required>
+                        <option value="" disabled selected>Seleccionar...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="numeroIdentificacion">Número de Identificación</label>
+                    <input type="number" id="numeroIdentificacion" name="numeroIdentificacion">
+                </div>
+                <div class="form-group">
+                    <label for="oficina">Oficina</label>
+                    <input type="text" id="oficinaInput" name="oficina" placeholder="Buscar oficina...">
+                </div>
+                <div class="form-group">
+                    <label for="pagaduria">Pagaduría</label>
+                    <input type="text" id="pagaduriaInput" name="pagaduria" placeholder="Buscar pagaduría...">
+                </div>
+                <div class="form-group">
+                    <label for="planSeguro">Plan de Seguro</label>
+                    <select id="planSeguro" name="planSeguro">
+                        <option value="" disabled selected>Seleccionar...</option>
+                        <option value="plan1">Plan 1</option>
+                        <option value="plan2">Plan 2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lineaCredito">Línea de Crédito</label>
+                    <select id="lineaCredito" name="lineaCredito">
+                        <option value="" disabled selected>Seleccionar...</option>
+                        <option value="libre_inversion">Libre inversión</option>
+                        <option value="retanqueo">Retanqueo</option>
+                        <option value="compra_cartera">Compra cartera</option>
+                    </select>
+                </div>
+                <button type="button" id="enviarButton" class="centrado">Enviar</button>
+                <button id="downloadLogButton" class="excel">Generar Excel</button> 
+                <button id="showLogButton" class="log">Ver Log</button>
+                
+            </form>
+            <div id="logContainer" style="display: none;">
+                <h2>Log de Formularios Enviados</h2>
+                <ul id="logList"></ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
